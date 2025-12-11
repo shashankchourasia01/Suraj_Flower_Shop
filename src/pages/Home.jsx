@@ -8,6 +8,8 @@ import {
   FaStar as FaStarIcon, FaGlobe, FaLightbulb, FaStore, FaHeart
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -15,6 +17,8 @@ const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const vendorsScrollRef = useRef(null);
   const videoRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const videoSrc = 'videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4';
   //const videoNew = '/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4'
@@ -471,9 +475,9 @@ const Home = () => {
                       {/* Type Badge */}
                       <div className="absolute top-4 left-4">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${event.type === 'Wedding' ? 'bg-pink-500 text-white' :
-                            event.type === 'Reception' ? 'bg-rose-500 text-white' :
-                              event.type === 'Birthday' ? 'bg-purple-500 text-white' :
-                                'bg-yellow-500 text-white'
+                          event.type === 'Reception' ? 'bg-rose-500 text-white' :
+                            event.type === 'Birthday' ? 'bg-purple-500 text-white' :
+                              'bg-yellow-500 text-white'
                           }`}>
                           {event.type}
                         </span>
@@ -591,7 +595,7 @@ const Home = () => {
                 price: "₹45,000",
                 rating: 4.9,
                 videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                thumbnail: "https://images.unsplash.com/photo-1560252816-37e3a6c7f39e?auto=format&fit=crop&w=800",
+                thumbnail: "https://images.unsplash.com/photo-1741441033545-24408e2308d3?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 description: "Floral haldi ceremony setup with traditional elements and fresh flowers."
               }
             ].map((event) => (
@@ -626,9 +630,9 @@ const Home = () => {
                   {/* Type Badge */}
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${event.type === 'Wedding' ? 'bg-pink-500 text-white' :
-                        event.type === 'Reception' ? 'bg-rose-500 text-white' :
-                          event.type === 'Birthday' ? 'bg-purple-500 text-white' :
-                            'bg-yellow-500 text-white'
+                      event.type === 'Reception' ? 'bg-rose-500 text-white' :
+                        event.type === 'Birthday' ? 'bg-purple-500 text-white' :
+                          'bg-yellow-500 text-white'
                       }`}>
                       {event.type}
                     </span>
@@ -693,13 +697,221 @@ const Home = () => {
 
           {/* View All Button */}
           <div className="text-center mt-10 md:mt-16">
-            <button className="group relative overflow-hidden border-2 border-pink-500 text-pink-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
+            
+            <button 
+            onClick={() => navigate('/portfolio')}
+            className="group relative overflow-hidden border-2 border-pink-500 text-pink-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
               <span className="relative z-10">View All Events Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </button>
+            
           </div>
         </div>
       </section>
+
+      {/* Why Choose Suraj Flower Shop Section */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              Why Choose <span className="text-pink-600">Suraj Flower Shop</span>?
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Experience the difference of dedicated artistry, unparalleled quality, and a truly personal touch.
+            </p>
+          </div>
+
+          {/* Features Grid - Vertical on Mobile, Horizontal on Desktop */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+            {/* Feature 1 */}
+            <div className="flex-1">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 mb-6">
+                  <span className="text-2xl font-bold text-pink-600">1</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Unrivaled Creativity
+                </h3>
+                <div className="h-1 w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-6 mx-auto md:mx-0"></div>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  Our team brings fresh, innovative ideas to every project, ensuring your floral arrangements are unique and breathtaking.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="flex-1">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-rose-100 to-pink-100 mb-6">
+                  <span className="text-2xl font-bold text-pink-600">2</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Personalized Service
+                </h3>
+                <div className="h-1 w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-6 mx-auto md:mx-0"></div>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  We listen intently to your vision, collaborating closely to craft designs that perfectly reflect your style and personality.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="flex-1">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 mb-6">
+                  <span className="text-2xl font-bold text-pink-600">3</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Sustainable Practices
+                </h3>
+                <div className="h-1 w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-6 mx-auto md:mx-0"></div>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  Committed to the environment, we prioritize locally sourced flowers and eco-friendly practices in all our designs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative Divider */}
+          <div className="mt-16 md:mt-20 pt-8 border-t border-pink-100">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-pink-400"></div>
+                <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+                <div className="w-3 h-3 rounded-full bg-pink-300"></div>
+              </div>
+              <p className="text-gray-500 text-center text-sm md:text-base italic">
+                Trusted by thousands of satisfied customers across India
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-rose-300"></div>
+                <div className="w-3 h-3 rounded-full bg-pink-400"></div>
+                <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+            {/* What Our Clients Say Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-b from-pink-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              What Our <span className="text-pink-600">Clients Say</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hear from our happy customers who have experienced the magic of Suraj Flower Shop's floral creations.
+            </p>
+          </div>
+
+          {/* Reviews Container - Horizontal Scroll on Mobile */}
+          <div className="flex overflow-x-auto scrollbar-hide space-x-4 py-4 -mx-2 px-2 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:space-x-0">
+            {[
+              {
+                id: 1,
+                name: "Aisha K.",
+                service: "Wedding Decoration",
+                rating: 5,
+                review: "Suraj Flower Shop exceeded all our expectations! The wedding decor was absolutely stunning.",
+                avatar: "AK"
+              },
+              {
+                id: 2,
+                name: "David L.",
+                service: "Birthday Party",
+                rating: 5,
+                review: "The birthday party flowers were so vibrant and beautifully arranged. Highly recommend!",
+                avatar: "DL"
+              },
+              {
+                id: 3,
+                name: "Sophia P.",
+                service: "Baby Shower",
+                rating: 5,
+                review: "For our baby shower, Suraj Flower Shop created the most delicate and charming floral setting.",
+                avatar: "SP"
+              },
+              {
+                id: 4,
+                name: "Rajesh M.",
+                service: "Reception",
+                rating: 5,
+                review: "The reception venue looked like a fairy tale! Every floral arrangement was perfect.",
+                avatar: "RM"
+              },
+              {
+                id: 5,
+                name: "Priya S.",
+                service: "Anniversary",
+                rating: 5,
+                review: "Our 25th anniversary celebration was made extra special by the breathtaking floral arrangements.",
+                avatar: "PS"
+              }
+            ].map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="flex-shrink-0 w-[80vw] md:w-auto"
+              >
+                <div className="bg-white rounded-xl shadow-md border border-pink-100 p-5 h-full hover:shadow-lg transition-shadow">
+                  {/* Review Text */}
+                  <p className="text-gray-700 italic mb-4 text-sm line-clamp-4">
+                    "{testimonial.review}"
+                  </p>
+                  
+                  {/* Stars Rating */}
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className="text-yellow-400 text-sm" />
+                    ))}
+                  </div>
+                  
+                  {/* Reviewer Info */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-pink-100">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-rose-400 flex items-center justify-center text-white font-bold">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 text-sm">{testimonial.name}</h4>
+                      <p className="text-pink-600 text-xs">{testimonial.service}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Scroll Hint */}
+          <div className="md:hidden text-center mt-6">
+            <p className="text-xs text-gray-500">← Scroll to see more reviews →</p>
+          </div>
+
+          {/* Simple Stats */}
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-pink-100 text-center">
+              <div className="text-xl md:text-2xl font-bold text-pink-600">5000+</div>
+              <div className="text-gray-600 text-sm">Happy Clients</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-pink-100 text-center">
+              <div className="text-xl md:text-2xl font-bold text-pink-600">4.9/5</div>
+              <div className="text-gray-600 text-sm">Avg Rating</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-pink-100 text-center">
+              <div className="text-xl md:text-2xl font-bold text-pink-600">1000+</div>
+              <div className="text-gray-600 text-sm">Events</div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-pink-100 text-center">
+              <div className="text-xl md:text-2xl font-bold text-pink-600">98%</div>
+              <div className="text-gray-600 text-sm">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
     </div>
   );
 };
