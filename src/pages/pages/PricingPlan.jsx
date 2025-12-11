@@ -398,7 +398,7 @@ const PricingPlan = () => {
                   Discuss Custom Package
                 </a>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+916201718933"
                   className="bg-transparent border-2 border-white hover:bg-white/20 px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
                 >
                   <FaWhatsapp className="text-lg" />
