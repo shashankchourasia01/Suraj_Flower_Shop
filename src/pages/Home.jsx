@@ -379,335 +379,312 @@ const Home = () => {
 
       {/* Recently Executed Weddings Gallery */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-white to-pink-50">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Section Header */}
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              A Glimpse Into Our <span className="text-pink-600">Recently Executed Weddings</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Experience the magic we've created for happy couples
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4">
+    {/* Section Header */}
+    <div className="text-center mb-10 md:mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        A Glimpse Into Our <span className="text-pink-600">Recently Executed Weddings</span>
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Experience the magic we've created for happy couples
+      </p>
+    </div>
 
-          {/* Wedding Cards - Mobile Horizontal Scroll */}
-          <div className="md:hidden relative">
-            <div className="flex overflow-x-auto scrollbar-hide space-x-6 py-4 -mx-2 px-2">
-              {[
-                {
-                  id: 1,
-                  title: "Royal Wedding Decoration",
-                  type: "Wedding",
-                  couple: "Rahul & Priya",
-                  location: "Jaipur Palace",
-                  price: "₹1,50,000",
-                  rating: 4.9,
-                  videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                  thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
-                  description: "Complete wedding setup with floral mandap"
-                },
-                {
-                  id: 2,
-                  title: "Garden Reception Party",
-                  type: "Reception",
-                  couple: "Amit & Sneha",
-                  location: "Udaipur Garden",
-                  price: "₹85,000",
-                  rating: 4.8,
-                  videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                  thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
-                  description: "Outdoor reception with fairy lights"
-                },
-                {
-                  id: 3,
-                  title: "Birthday Balloon Decor",
-                  type: "Birthday",
-                  person: "Ananya's 25th",
-                  location: "Delhi Banquet",
-                  price: "₹35,000",
-                  rating: 4.7,
-                  videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                  thumbnail: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800",
-                  description: "Theme birthday decoration with balloons"
-                },
-                {
-                  id: 4,
-                  title: "Traditional Haldi Ceremony",
-                  type: "Haldi",
-                  couple: "Vikram & Riya",
-                  location: "Mumbai Resort",
-                  price: "₹45,000",
-                  rating: 4.9,
-                  videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                  thumbnail: "https://images.unsplash.com/photo-1741441033545-24408e2308d3?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                  description: "Floral haldi ceremony setup"
-                }
-              ].map((event) => (
-                <div
-                  key={event.id}
-                  className="flex-shrink-0 w-[85vw]"
+    {/* Wedding Cards - Mobile Horizontal Scroll */}
+    <div className="md:hidden relative">
+      <div className="flex overflow-x-auto scrollbar-hide space-x-6 py-4 -mx-2 px-2">
+        {[
+          {
+            id: 1,
+            title: "Royal Wedding Decoration",
+            type: "Wedding",
+            couple: "Rahul & Priya",
+            location: "Jaipur Palace",
+            price: "₹1,50,000",
+            rating: 4.9,
+            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
+            description: "Complete wedding setup with floral mandap"
+          },
+          {
+            id: 2,
+            title: "Garden Reception Party",
+            type: "Reception",
+            couple: "Amit & Sneha",
+            location: "Udaipur Garden",
+            price: "₹85,000",
+            rating: 4.8,
+            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
+            description: "Outdoor reception with fairy lights"
+          },
+          {
+            id: 3,
+            title: "Birthday Balloon Decor",
+            type: "Birthday",
+            person: "Ananya's 25th",
+            location: "Delhi Banquet",
+            price: "₹35,000",
+            rating: 4.7,
+            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            thumbnail: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800",
+            description: "Theme birthday decoration with balloons"
+          },
+          {
+            id: 4,
+            title: "Traditional Haldi Ceremony",
+            type: "Haldi",
+            couple: "Vikram & Riya",
+            location: "Mumbai Resort",
+            price: "₹45,000",
+            rating: 4.9,
+            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            thumbnail: "https://images.unsplash.com/photo-1698460918119-7359a8a945a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            description: "Floral haldi ceremony setup"
+          }
+        ].map((event) => (
+          <div key={event.id} className="flex-shrink-0 w-[85vw]">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100">
+              {/* Mobile Video with Controls */}
+              <div className="relative h-48 overflow-hidden">
+                <video
+                  className="w-full h-full object-cover"
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  poster={event.thumbnail}
                 >
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100 hover:shadow-2xl transition-all duration-300 group">
-                    {/* Video/Image Container */}
-                    <div className="relative h-48 md:h-56 overflow-hidden">
-                      {/* Video on Hover */}
-                      <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-opacity duration-500">
-                        <video
-                          className="w-full h-full object-cover"
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                        >
-                          <source src={event.videoSrc} type="video/mp4" />
-                        </video>
-                      </div>
-
-                      {/* Thumbnail Image */}
-                      <div className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-                        <img
-                          src={event.thumbnail}
-                          alt={event.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-
-                      {/* Type Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${event.type === 'Wedding' ? 'bg-pink-500 text-white' :
-                          event.type === 'Reception' ? 'bg-rose-500 text-white' :
-                            event.type === 'Birthday' ? 'bg-purple-500 text-white' :
-                              'bg-yellow-500 text-white'
-                          }`}>
-                          {event.type}
-                        </span>
-                      </div>
-
-                      {/* Play Icon */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                          <FaPlay className="text-pink-600" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="p-5">
-                      {/* Title & Rating */}
-                      <div className="flex justify-between items-start mb-3">
-                        <h3 className="text-lg font-bold text-gray-800 line-clamp-1">
-                          {event.title}
-                        </h3>
-                        <div className="flex items-center gap-1">
-                          <FaStar className="text-yellow-400 text-sm" />
-                          <span className="text-sm font-semibold">{event.rating}</span>
-                        </div>
-                      </div>
-
-                      {/* Details */}
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center gap-2">
-                          <FaUserTie className="text-pink-400 text-sm" />
-                          <span className="text-sm text-gray-600">
-                            {event.couple || event.person}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <FaMapMarkerAlt className="text-pink-400 text-sm" />
-                          <span className="text-sm text-gray-600">
-                            {event.location}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-500 line-clamp-2">
-                          {event.description}
-                        </p>
-                      </div>
-
-                      {/* Price & Action */}
-                      <div className="flex justify-between items-center pt-4 border-t border-pink-100">
-                        <div>
-                          <span className="text-lg font-bold text-pink-600">
-                            {event.price}
-                          </span>
-                          <span className="text-sm text-gray-500 ml-1">starting</span>
-                        </div>
-                        <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
-                          Book Now
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Scroll Hint */}
-            <div className="text-center mt-6">
-              <p className="text-sm text-gray-500 animate-pulse">← Swipe to see more →</p>
-            </div>
-          </div>
-
-          {/* Desktop Grid Layout */}
-          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                id: 1,
-                title: "Royal Wedding Decoration",
-                type: "Wedding",
-                couple: "Rahul & Priya",
-                location: "Jaipur Palace",
-                price: "₹1,50,000",
-                rating: 4.9,
-                videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
-                description: "Complete wedding setup with floral mandap, stage decoration, and entrance design."
-              },
-              {
-                id: 2,
-                title: "Garden Reception Party",
-                type: "Reception",
-                couple: "Amit & Sneha",
-                location: "Udaipur Garden",
-                price: "₹85,000",
-                rating: 4.8,
-                videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
-                description: "Outdoor reception with fairy lights, floral centerpieces, and theme decoration."
-              },
-              {
-                id: 3,
-                title: "Birthday Balloon Decor",
-                type: "Birthday",
-                person: "Ananya's 25th",
-                location: "Delhi Banquet",
-                price: "₹35,000",
-                rating: 4.7,
-                videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                thumbnail: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800",
-                description: "Theme birthday decoration with balloons, backdrop, and table arrangements."
-              },
-              {
-                id: 4,
-                title: "Traditional Haldi Ceremony",
-                type: "Haldi",
-                couple: "Vikram & Riya",
-                location: "Mumbai Resort",
-                price: "₹45,000",
-                rating: 4.9,
-                videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                thumbnail: "https://images.unsplash.com/photo-1741441033545-24408e2308d3?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                description: "Floral haldi ceremony setup with traditional elements and fresh flowers."
-              }
-            ].map((event) => (
-              <div
-                key={event.id}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100 hover:shadow-2xl transition-all duration-300 group"
-              >
-                {/* Video/Image Container */}
-                <div className="relative h-56 overflow-hidden">
-                  {/* Video on Hover */}
-                  <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-opacity duration-500">
-                    <video
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source src={event.videoSrc} type="video/mp4" />
-                    </video>
-                  </div>
-
-                  {/* Thumbnail Image */}
-                  <div className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-                    <img
-                      src={event.thumbnail}
-                      alt={event.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Type Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${event.type === 'Wedding' ? 'bg-pink-500 text-white' :
-                      event.type === 'Reception' ? 'bg-rose-500 text-white' :
-                        event.type === 'Birthday' ? 'bg-purple-500 text-white' :
-                          'bg-yellow-500 text-white'
-                      }`}>
-                      {event.type}
-                    </span>
-                  </div>
-
-                  {/* Play Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                      <FaPlay className="text-pink-600 text-xl" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-6">
-                  {/* Title & Rating */}
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
-                      {event.title}
-                    </h3>
-                    <div className="flex items-center gap-1">
-                      <FaStar className="text-yellow-400" />
-                      <span className="font-semibold">{event.rating}</span>
-                    </div>
-                  </div>
-
-                  {/* Details */}
-                  <div className="space-y-3 mb-5">
-                    <div className="flex items-center gap-2">
-                      <FaUserTie className="text-pink-400" />
-                      <span className="text-gray-700">
-                        {event.couple || event.person}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FaMapMarkerAlt className="text-pink-400" />
-                      <span className="text-gray-700">
-                        {event.location}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
-
-                  {/* Price & Action */}
-                  <div className="flex justify-between items-center pt-5 border-t border-pink-100">
-                    <div>
-                      <span className="text-2xl font-bold text-pink-600">
-                        {event.price}
-                      </span>
-                      <span className="text-gray-500 ml-2">starting</span>
-                    </div>
-                    <button className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
-                      Book Now
-                    </button>
-                  </div>
+                  <source src={event.videoSrc} type="video/mp4" />
+                </video>
+                
+                {/* Type Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    event.type === 'Wedding' ? 'bg-pink-500 text-white' :
+                    event.type === 'Reception' ? 'bg-rose-500 text-white' :
+                    event.type === 'Birthday' ? 'bg-purple-500 text-white' :
+                    'bg-yellow-500 text-white'
+                  }`}>
+                    {event.type}
+                  </span>
                 </div>
               </div>
-            ))}
+              
+              {/* Card Content */}
+              <div className="p-5">
+                {/* Title & Rating */}
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-lg font-bold text-gray-800 line-clamp-1">
+                    {event.title}
+                  </h3>
+                  <div className="flex items-center gap-1">
+                    <FaStar className="text-yellow-400 text-sm" />
+                    <span className="text-sm font-semibold">{event.rating}</span>
+                  </div>
+                </div>
+                
+                {/* Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2">
+                    <FaUserTie className="text-pink-400 text-sm" />
+                    <span className="text-sm text-gray-600">
+                      {event.couple || event.person}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaMapMarkerAlt className="text-pink-400 text-sm" />
+                    <span className="text-sm text-gray-600">
+                      {event.location}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-500 line-clamp-2">
+                    {event.description}
+                  </p>
+                </div>
+                
+                {/* Price & Action */}
+                <div className="flex justify-between items-center pt-4 border-t border-pink-100">
+                  <div>
+                    <span className="text-lg font-bold text-pink-600">
+                      {event.price}
+                    </span>
+                    <span className="text-sm text-gray-500 ml-1">starting</span>
+                  </div>
+                  <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
+      
+      {/* Mobile Scroll Hint */}
+      <div className="text-center mt-6">
+        <p className="text-sm text-gray-500 animate-pulse">← Swipe to see more →</p>
+      </div>
+    </div>
 
-          {/* View All Button */}
-          <div className="text-center mt-10 md:mt-16">
+    {/* Desktop Grid Layout */}
+    <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        {
+          id: 1,
+          title: "Royal Wedding Decoration",
+          type: "Wedding",
+          couple: "Rahul & Priya",
+          location: "Jaipur Palace",
+          price: "₹1,50,000",
+          rating: 4.9,
+          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
+          description: "Complete wedding setup with floral mandap, stage decoration, and entrance design."
+        },
+        {
+          id: 2,
+          title: "Garden Reception Party",
+          type: "Reception",
+          couple: "Amit & Sneha",
+          location: "Udaipur Garden",
+          price: "₹85,000",
+          rating: 4.8,
+          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
+          description: "Outdoor reception with fairy lights, floral centerpieces, and theme decoration."
+        },
+        {
+          id: 3,
+          title: "Birthday Balloon Decor",
+          type: "Birthday",
+          person: "Ananya's 25th",
+          location: "Delhi Banquet",
+          price: "₹35,000",
+          rating: 4.7,
+          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          thumbnail: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800",
+          description: "Theme birthday decoration with balloons, backdrop, and table arrangements."
+        },
+        {
+          id: 4,
+          title: "Traditional Haldi Ceremony",
+          type: "Haldi",
+          couple: "Vikram & Riya",
+          location: "Mumbai Resort",
+          price: "₹45,000",
+          rating: 4.9,
+          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          thumbnail: "https://images.unsplash.com/photo-1698460918119-7359a8a945a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          description: "Floral haldi ceremony setup with traditional elements and fresh flowers."
+        }
+      ].map((event) => (
+        <div
+          key={event.id}
+          className="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100 hover:shadow-2xl transition-all duration-300 group"
+        >
+          {/* Video/Image Container */}
+          <div className="relative h-56 overflow-hidden">
+            {/* Video on Hover */}
+            <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-opacity duration-500">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={event.videoSrc} type="video/mp4" />
+              </video>
+            </div>
             
-            <button 
-            onClick={() => navigate('/portfolio')}
-            className="group relative overflow-hidden border-2 border-pink-500 text-pink-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
-              <span className="relative z-10">View All Events Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-            </button>
+            {/* Thumbnail Image */}
+            <div className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
+              <img
+                src={event.thumbnail}
+                alt={event.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
             
+            {/* Type Badge */}
+            <div className="absolute top-4 left-4">
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                event.type === 'Wedding' ? 'bg-pink-500 text-white' :
+                event.type === 'Reception' ? 'bg-rose-500 text-white' :
+                event.type === 'Birthday' ? 'bg-purple-500 text-white' :
+                'bg-yellow-500 text-white'
+              }`}>
+                {event.type}
+              </span>
+            </div>
+            
+            {/* Play Icon */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+                <FaPlay className="text-pink-600 text-xl" />
+              </div>
+            </div>
+          </div>
+          
+          {/* Card Content */}
+          <div className="p-6">
+            {/* Title & Rating */}
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
+                {event.title}
+              </h3>
+              <div className="flex items-center gap-1">
+                <FaStar className="text-yellow-400" />
+                <span className="font-semibold">{event.rating}</span>
+              </div>
+            </div>
+            
+            {/* Details */}
+            <div className="space-y-3 mb-5">
+              <div className="flex items-center gap-2">
+                <FaUserTie className="text-pink-400" />
+                <span className="text-gray-700">
+                  {event.couple || event.person}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-pink-400" />
+                <span className="text-gray-700">
+                  {event.location}
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {event.description}
+              </p>
+            </div>
+            
+            {/* Price & Action */}
+            <div className="flex justify-between items-center pt-5 border-t border-pink-100">
+              <div>
+                <span className="text-2xl font-bold text-pink-600">
+                  {event.price}
+                </span>
+                <span className="text-gray-500 ml-2">starting</span>
+              </div>
+              <button className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* View All Button */}
+    <div className="text-center mt-10 md:mt-16">
+      <button className="group relative overflow-hidden border-2 border-pink-500 text-pink-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
+        <span className="relative z-10">View All Wedding Projects</span>
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* Why Choose Suraj Flower Shop Section */}
       <section className="py-12 md:py-20 bg-white">
