@@ -202,8 +202,9 @@ const PricingPlan = () => {
     { name: "Wedding", count: "3 Packages", icon: <FaCalendarAlt />, color: "bg-pink-500" },
     { name: "Reception", count: "1 Package", icon: <FaUsers />, color: "bg-purple-500" },
     { name: "Birthday", count: "1 Package", icon: <FaGift />, color: "bg-yellow-500" },
-    { name: "Baby Shower", count: "1 Package", icon: <FaHome />, color: "bg-green-500" },
-    { name: "Car Decor", count: "1 Package", icon: <FaCar />, color: "bg-indigo-500" }
+    { name: "Grih Pravesh", count: "1 Package", icon: <FaHome />, color: "bg-green-500" },
+    { name: "Car Decor", count: "1 Package", icon: <FaCar />, color: "bg-indigo-500" },
+    { name: "Haldi + Mehendi", count: "1 Package", icon: <FaUsers />, color: "bg-purple-500" },
   ];
 
   return (
@@ -238,7 +239,7 @@ const PricingPlan = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 py-6 md:py-10">
         {/* Stats Section */}
         <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
