@@ -1,12 +1,72 @@
 import React, { useState, useRef } from 'react';
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute, FaWhatsapp, FaStar, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { 
+  FaPlay, FaPause, FaVolumeUp, FaVolumeMute, FaWhatsapp, FaStar,
+  FaHome, FaImages, FaShoppingCart, FaPhoneAlt, FaEnvelope, FaUsers,
+  FaRupeeSign, FaCamera, FaGift, FaUserTie, FaGem, FaHotel, FaMusic,
+  FaArrowLeft, FaArrowRight,
+  FaStar as FaStarIcon, FaGlobe, FaLightbulb, FaStore, FaHeart
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const vendorsScrollRef = useRef(null);
   const videoRef = useRef(null);
 
   const videoSrc = 'videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4';
+
+  // Vendors/Pages icons data
+  const vendors = [
+    { id: 1, name: 'CONTACT US ', icon: <FaPhoneAlt />, path: '/pages/contact-us' },
+    { id: 3, name: 'ABOUT US', icon: <FaUsers />, path: '/pages/about-us' },
+    { id: 4, name: 'OUR TEAM', icon: <FaUserTie />, path: '/pages/our-team' },
+    { id: 5, name: 'PRICING PLAN', icon: <FaRupeeSign />, path: 'pages/pricing-plan' },
+    { id: 6, name: 'HOME', icon: <FaHome />, path: '/' },
+    { id: 7, name: 'GALLERY', icon: <FaCamera />, path: '/portfolio' },
+    { id: 8, name: 'SHOP', icon: <FaShoppingCart />, path: '/shop' },
+    { id: 9, name: 'Invitation Cards', icon: <FaEnvelope />, path: '/invitations' },
+    { id: 10, name: 'Wedding Jewellery', icon: <FaGem />, path: '/jewellery' },
+    { id: 11, name: 'Accommodations', icon: <FaHotel />, path: '/accommodations' },
+    { id: 12, name: 'Choreographers', icon: <FaMusic />, path: '/choreographers' },
+    { id: 13, name: 'Balloon Decorators', icon: <FaStarIcon />, path: '/balloon-decor' },
+    { id: 14, name: 'Anchor/Host', icon: <FaUserTie />, path: '/anchors' },
+    { id: 15, name: 'Gift/Trousseau', icon: <FaGift />, path: '/gifts' },
+    { id: 16, name: 'Astrologer', icon: <FaStar />, path: '/astrologer' },
+    { id: 17, name: 'Wedding Card', icon: <FaHeart />, path: '/wedding-card' },
+  ];
+
+  const features = [
+    {
+      id: 1,
+      title: 'Wedding Website',
+      description: 'We connect your memories with technology.',
+      icon: <FaGlobe className="text-3xl text-pink-500" />,
+      bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
+    },
+    {
+      id: 2,
+      title: 'Wedding Vogue',
+      description: 'See the trending wedding ideas and Inspirations.',
+      icon: <FaLightbulb className="text-3xl text-pink-500" />,
+      bgColor: 'bg-gradient-to-br from-rose-50 to-pink-50'
+    },
+    {
+      id: 3,
+      title: 'Vendors',
+      description: 'Find the verified wedding vendors within your budget.',
+      icon: <FaStore className="text-3xl text-pink-500" />,
+      bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
+    },
+    {
+      id: 4,
+      title: 'Real Wedding',
+      description: 'See the insight of latest weddings.',
+      icon: <FaCamera className="text-3xl text-pink-500" />,
+      bgColor: 'bg-gradient-to-br from-rose-50 to-pink-50'
+    }
+  ];
 
   const handlePlayPause = () => {
     const video = videoRef.current;
@@ -25,6 +85,19 @@ const Home = () => {
     if (video) {
       video.muted = !video.muted;
       setIsMuted(video.muted);
+    }
+  };
+
+  const scrollVendors = (direction) => {
+    const container = vendorsScrollRef.current;
+    if (container) {
+      const scrollAmount = 300;
+      if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+      } else {
+        container.scrollLeft += scrollAmount;
+      }
+      setScrollPosition(container.scrollLeft);
     }
   };
 
@@ -71,46 +144,6 @@ const Home = () => {
         {/* Content Overlay - Exactly like reference image */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-full max-w-6xl px-4">
-            {/* Top Decoration Text */}
-            {/* <div className="mb-8 md:mb-12">
-              <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
-                <span className="text-white text-sm md:text-base font-medium tracking-wide">
-                  The Wedding Company
-                </span>
-              </div>
-            </div> */}
-
-            {/* Couple & Location Info - Mobile First Layout */}
-          {/* <div className="mb-6 md:mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-xl sm:text-2xl font-bold">Shivika & Ashish</span>
-                </div>
-                <div className="hidden sm:block text-white/60">•</div>
-                <div className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-white/80" />
-                  <span className="text-white">Udaipur</span>
-                </div>
-                <div className="hidden sm:block text-white/60">•</div>
-                <div className="flex items-center gap-2">
-                  <FaCalendarAlt className="text-white/80" />
-                  <span className="text-white">Feb. 25</span>
-                </div>
-              </div>
-              
-              
-              <div className="sm:hidden flex flex-col items-center gap-2">
-                <div className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-white/80" />
-                  <span className="text-white">Udaipur</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaCalendarAlt className="text-white/80" />
-                  <span className="text-white">Feb. 25</span>
-                </div>
-              </div>
-            </div>  */}
-
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-8 md:mb-12 leading-tight">
               Crafting Memorable
@@ -164,28 +197,73 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Next Section - Services Preview */}
-      <section className="py-12 bg-gradient-to-b from-white to-pink-50">
+      {/* Find Trusted Vendors Section */}
+      <section className="py-6 md:py-10 bg-gradient-to-b from-white to-pink-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">
-            Our Wedding Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-pink-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Venue Decoration</h3>
-              <p className="text-gray-600 text-sm">Complete wedding venue setup with flowers</p>
+          {/* Section Title */}
+          <div className="text-center mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Explore Our <span className="text-pink-600">Services</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore a wide range of elegant decoration services for your special moments.
+            </p>
+          </div>
+
+          {/* Vendors Scroll Container */}
+          <div className="relative">
+            {/* Left Scroll Button */}
+            <button
+              onClick={() => scrollVendors('left')}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:block"
+            >
+              <FaArrowRight className="rotate-180 text-pink-500" />
+            </button>
+
+            {/* Vendors Horizontal Scroll */}
+            <div
+              ref={vendorsScrollRef}
+              className="flex overflow-x-auto scrollbar-hide space-x-4 md:space-x-6 px-2 py-4 md:px-8"
+              style={{ scrollBehavior: 'smooth' }}
+            >
+              {vendors.map((vendor) => (
+                <Link
+                  key={vendor.id}
+                  to={vendor.path}
+                  className="flex-shrink-0 w-28 md:w-36 bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl border border-pink-100 hover:border-pink-300 transition-all duration-300 group"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center mb-3 group-hover:from-pink-200 group-hover:to-rose-200 transition-all">
+                      <div className="text-pink-600 text-lg md:text-xl">
+                        {vendor.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-sm md:text-base font-semibold text-gray-800 group-hover:text-pink-600 line-clamp-2">
+                      {vendor.name}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-pink-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Stage Design</h3>
-              <p className="text-gray-600 text-sm">Beautiful mandap and stage decorations</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-pink-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Flower Arrangements</h3>
-              <p className="text-gray-600 text-sm">Fresh flower bouquets and centerpieces</p>
+
+            {/* Right Scroll Button */}
+            <button
+              onClick={() => scrollVendors('right')}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:block"
+            >
+              <FaArrowRight className="text-pink-500" />
+            </button>
+
+            {/* Mobile Scroll Indicator */}
+            <div className="md:hidden text-center mt-4">
+              <p className="text-sm text-gray-500">← Scroll horizontally →</p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Features Section with Flower Background */}
+      
     </div>
   );
 };

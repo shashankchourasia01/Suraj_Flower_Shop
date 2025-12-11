@@ -7,6 +7,12 @@ import Pages from './pages/Pages'
 import Portfolio from './pages/Portfolio'
 import Shop from './pages/Shop'
 
+// sub pages imports
+import AboutUs from './pages/pages/AboutUs'
+import OurTeam from './pages/pages/OurTeam'
+import PricingPlan from './pages/pages/PricingPlan'
+import ContactUs from './pages/pages/ContactUs'
+
 
 const App = () => {
   return (
@@ -15,6 +21,13 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/pages' element={<Pages />} />
+
+        {/* Pages Sub Routes */}
+        <Route path='/pages/about-us' element={<AboutUs />} />
+        <Route path='/pages/our-team' element={<OurTeam />} />
+        <Route path='/pages/pricing-plan' element={<PricingPlan />} />
+        <Route path='/pages/contact-us' element={<ContactUs />} />
+
         <Route path='/portfolio' element={<Portfolio /> } />
         <Route path='/shop' element={<Shop />} />
 

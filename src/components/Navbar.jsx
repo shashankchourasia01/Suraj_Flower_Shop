@@ -38,12 +38,14 @@ export default function Navbar() {
     { icon: <FaYoutube />, link: 'https://youtube.com/surajflowershop' }
   ];
 
+
   const pagesMenu = [
-    { name: 'About Us', path: '/about' },
-    { name: 'Our Team', path: '/team' },
-    { name: 'Pricing Plans', path: '/pricing' },
-    { name: 'Contact Us', path: '/contact' }
-  ];
+  { name: 'About Us', path: '/pages/about-us' },
+  { name: 'Our Team', path: '/pages/our-team' },
+  { name: 'Pricing Plans', path: '/pages/pricing-plan' },
+  { name: 'Contact Us', path: '/pages/contact-us' }
+];
+
 
   const navLinks = [
     { name: 'HOME', path: '/' },
