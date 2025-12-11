@@ -439,7 +439,7 @@ const Home = () => {
                   price: "₹45,000",
                   rating: 4.9,
                   videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-                  thumbnail: "https://images.unsplash.com/photo-1560252816-37e3a6c7f39e?auto=format&fit=crop&w=800",
+                  thumbnail: "https://images.unsplash.com/photo-1741441033545-24408e2308d3?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                   description: "Floral haldi ceremony setup"
                 }
               ].map((event) => (
