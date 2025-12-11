@@ -402,7 +402,7 @@ const Home = () => {
             location: "Jaipur Palace",
             price: "₹1,50,000",
             rating: 4.9,
-            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            videoSrc: "/videos/onev.mp4",
             thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
             description: "Complete wedding setup with floral mandap"
           },
@@ -414,7 +414,7 @@ const Home = () => {
             location: "Udaipur Garden",
             price: "₹85,000",
             rating: 4.8,
-            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+            videoSrc: "/videos/threev.mp4",
             thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
             description: "Outdoor reception with fairy lights"
           },
@@ -438,8 +438,8 @@ const Home = () => {
             location: "Mumbai Resort",
             price: "₹45,000",
             rating: 4.9,
-            videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
-            thumbnail: "https://images.unsplash.com/photo-1698460918119-7359a8a945a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            videoSrc: "/videos/twov.mp4",
+            thumbnail: "https://images.un&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "Floral haldi ceremony setup"
           }
         ].map((event) => (
@@ -538,7 +538,7 @@ const Home = () => {
           location: "Jaipur Palace",
           price: "₹1,50,000",
           rating: 4.9,
-          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          videoSrc: "/videos/onev.mp4",
           thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800",
           description: "Complete wedding setup with floral mandap, stage decoration, and entrance design."
         },
@@ -550,7 +550,7 @@ const Home = () => {
           location: "Udaipur Garden",
           price: "₹85,000",
           rating: 4.8,
-          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          videoSrc: "/videos/threev.mp4",
           thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800",
           description: "Outdoor reception with fairy lights, floral centerpieces, and theme decoration."
         },
@@ -574,7 +574,7 @@ const Home = () => {
           location: "Mumbai Resort",
           price: "₹45,000",
           rating: 4.9,
-          videoSrc: "/videos/Wedding Decoration Dubai. Event Rentals Dubai. Wedding Planner Dubai. Wedding at Kempinski The Palm 1080p (2).mp4",
+          videoSrc: "/videos/twov.mp4",
           thumbnail: "https://images.unsplash.com/photo-1698460918119-7359a8a945a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           description: "Floral haldi ceremony setup with traditional elements and fresh flowers."
         }
