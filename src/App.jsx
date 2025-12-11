@@ -12,6 +12,7 @@ import AboutUs from './pages/pages/AboutUs'
 import OurTeam from './pages/pages/OurTeam'
 import PricingPlan from './pages/pages/PricingPlan'
 import ContactUs from './pages/pages/ContactUs'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -34,7 +35,7 @@ const App = () => {
         {/* fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-
+      <Footer />
 
     </>
   )
