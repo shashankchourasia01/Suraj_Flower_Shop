@@ -40,8 +40,8 @@ const Home = () => {
   const features = [
     {
       id: 1,
-      title: 'Wedding Website',
-      description: 'We connect your memories with technology.',
+      title: 'Wedding Decoration',
+      description: 'We connect your memories with everyone.',
       icon: <FaGlobe className="text-3xl text-pink-500" />,
       bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
     },
@@ -262,8 +262,113 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section with Flower Background */}
       
+          {/* Features Section with Flower Background */}
+      <section className="relative py-6 md:py-10 overflow-hidden">
+        {/* Animated Flower Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100">
+          <div className="absolute inset-0">
+            {/* Animated floating circles */}
+            <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-pink-300 to-rose-300 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-r from-rose-300 to-pink-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-pink-200 to-rose-200 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          </div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-5 md:mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Our <span className="text-pink-600">Wedding Solutions</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+              Everything you need for your perfect wedding in one place
+            </p>
+          </div>
+
+          {/* Mobile: Horizontal Scroll Cards */}
+          <div className="md:hidden relative">
+            {/* Scroll Container */}
+            <div className="flex overflow-x-auto scrollbar-hide space-x-6 py-4 px-2 -mx-2">
+              {features.map((feature, index) => (
+                <div
+                  key={feature.id}
+                  className="flex-shrink-0 w-[85vw]"
+                >
+                  <div 
+                    className={`${feature.bgColor} rounded-3xl p-8 shadow-2xl border-2 border-white transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl`}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {/* Icon Container */}
+                    <div className="relative mb-8">
+                      <div className="relative w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-pink-50 flex items-center justify-center shadow-lg border border-pink-200">
+                        <div className="text-3xl bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+                          {feature.icon}
+                        </div>
+                      </div>
+                      
+                      {/* Floating decorative dots */}
+                      <div className="absolute -top-2 -right-2 w-4 h-4 bg-pink-400 rounded-full animate-bounce"></div>
+                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-rose-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                    </div>
+                    
+                    {/* Title with gradient */}
+                    <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+                      {feature.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-700 text-center text-sm leading-relaxed mb-6">
+                      {feature.description}
+                    </p>
+                    
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Mobile Scroll Indicator */}
+            <div className="text-center mt-6">
+              <p className="text-sm text-gray-500 animate-pulse">← Swipe to explore →</p>
+            </div>
+          </div>
+
+          {/* Desktop: Grid Layout */}
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={feature.id}
+                className={`${feature.bgColor} rounded-3xl p-8 shadow-2xl border-2 border-white hover:shadow-3xl hover:border-pink-200 transition-all duration-500 transform hover:-translate-y-2`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {/* Icon Container */}
+                <div className="relative mb-8">
+                  <div className="relative w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-pink-50 flex items-center justify-center shadow-lg border border-pink-200 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-3xl bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  
+                  {/* Floating decorative dots */}
+                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-pink-400 rounded-full animate-bounce"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-rose-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                </div>
+                
+                {/* Title with gradient */}
+                <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+                  {feature.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-gray-700 text-center text-sm leading-relaxed mb-6">
+                  {feature.description}
+                </p>
+                
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
