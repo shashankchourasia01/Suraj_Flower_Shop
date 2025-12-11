@@ -687,7 +687,7 @@ const Home = () => {
 </section>
 
       {/* Why Choose Suraj Flower Shop Section */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-4 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-20">
@@ -751,20 +751,20 @@ const Home = () => {
           </div>
 
           {/* Decorative Divider */}
-          <div className="mt-16 md:mt-20 pt-8 border-t border-pink-100">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-6 md:mt-10 pt-4 border-t border-pink-100">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-pink-400"></div>
-                <div className="w-3 h-3 rounded-full bg-rose-400"></div>
-                <div className="w-3 h-3 rounded-full bg-pink-300"></div>
+                <div className="w-1 h-1 rounded-full bg-pink-400"></div>
+                <div className="w-1 h-1 rounded-full bg-rose-400"></div>
+                <div className="w-1 h-1 rounded-full bg-pink-300"></div>
               </div>
               <p className="text-gray-500 text-center text-sm md:text-base italic">
                 Trusted by thousands of satisfied customers across India
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-rose-300"></div>
-                <div className="w-3 h-3 rounded-full bg-pink-400"></div>
-                <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+                <div className="w-1 h-1 rounded-full bg-rose-300"></div>
+                <div className="w-1 h-1 rounded-full bg-pink-400"></div>
+                <div className="w-1 h-1 rounded-full bg-rose-400"></div>
               </div>
             </div>
           </div>
@@ -773,7 +773,7 @@ const Home = () => {
 
 
             {/* What Our Clients Say Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-pink-50 to-white">
+      <section className="py-4 md:py-8 bg-gradient-to-b from-pink-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-6 md:mb-10">
@@ -861,13 +861,8 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Mobile Scroll Hint */}
-          <div className="md:hidden text-center mt-6">
-            <p className="text-xs text-gray-500">← Scroll to see more reviews →</p>
-          </div>
-
           {/* Simple Stats */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-white p-4 rounded-lg shadow-sm border border-pink-100 text-center">
               <div className="text-xl md:text-2xl font-bold text-pink-600">5000+</div>
               <div className="text-gray-600 text-sm">Happy Clients</div>
@@ -888,6 +883,270 @@ const Home = () => {
         </div>
       </section>
       
+            {/* Our Wedding Venues in Dhanbad Section */}
+      <section className="py-6 md:py-10 bg-gradient-to-b from-white to-pink-50">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-4 md:mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+              Wedding Venues in <span className="text-pink-600">Dhanbad & Katras</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Top-rated hotels and locations where we create magic for your special moments
+            </p>
+          </div>
+
+          {/* Venues Auto-sliding Container */}
+          <div className="relative overflow-hidden py-4">
+            {/* Left Gradient Overlay */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+            
+            {/* Right Gradient Overlay */}
+            <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+            {/* Auto-sliding Venues - Infinite Animation */}
+            <div className="flex animate-scroll-venues space-x-6">
+              {/* First Set */}
+              {[
+                {
+                  id: 1,
+                  name: "Hotel Galaxy Dhanbad",
+                  location: "Bank More, Dhanbad",
+                  rating: 4.5,
+                  type: "5-Star Hotel",
+                  color: "from-pink-500 to-rose-500"
+                },
+                {
+                  id: 2,
+                  name: "Greenland Resorts",
+                  location: "Katras Road, Dhanbad",
+                  rating: 4.4,
+                  type: "Luxury Resort",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  id: 3,
+                  name: "Apsara Wedding Palace",
+                  location: "Koyla Nagar, Dhanbad",
+                  rating: 4.6,
+                  type: "Wedding Palace",
+                  color: "from-blue-500 to-purple-500"
+                },
+                {
+                  id: 4,
+                  name: "Shree Krishna Marriage Hall",
+                  location: "Katras, Dhanbad",
+                  rating: 4.3,
+                  type: "Marriage Hall",
+                  color: "from-green-500 to-blue-500"
+                },
+                {
+                  id: 5,
+                  name: "Hotel Samrat International",
+                  location: "Bank More, Dhanbad",
+                  rating: 4.4,
+                  type: "Banquet Hall",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  id: 6,
+                  name: "Mohan Garden Restaurant",
+                  location: "Saraidhela, Dhanbad",
+                  rating: 4.2,
+                  type: "Garden Restaurant",
+                  color: "from-red-500 to-pink-500"
+                },
+                {
+                  id: 7,
+                  name: "Raj Mahal Wedding Hall",
+                  location: "Katras, Dhanbad",
+                  rating: 4.5,
+                  type: "Wedding Hall",
+                  color: "from-indigo-500 to-purple-500"
+                },
+                {
+                  id: 8,
+                  name: "The Grand Dhanbad",
+                  location: "Hirapur, Dhanbad",
+                  rating: 4.6,
+                  type: "Premium Venue",
+                  color: "from-teal-500 to-green-500"
+                }
+              ].map((venue) => (
+                <div
+                  key={venue.id}
+                  className="flex-shrink-0 w-64 md:w-72 bg-white rounded-2xl shadow-lg border border-pink-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  {/* Venue Header with Gradient */}
+                  <div className={`h-3 bg-gradient-to-r ${venue.color}`}></div>
+                  
+                  <div className="p-5">
+                    {/* Venue Name */}
+                    <h3 className="text-lg font-bold text-gray-800 mb-2 line-clamp-1">
+                      {venue.name}
+                    </h3>
+                    
+                    {/* Location */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <FaMapMarkerAlt className="text-pink-400 text-sm" />
+                      <span className="text-gray-600 text-sm">{venue.location}</span>
+                    </div>
+                    
+                    {/* Rating */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar key={i} className={`text-sm ${i < Math.floor(venue.rating) ? 'text-yellow-400' : 'text-gray-300'}`} />
+                        ))}
+                      </div>
+                      <span className="text-gray-700 font-semibold">{venue.rating}</span>
+                    </div>
+                    
+                    {/* Venue Type Badge */}
+                    <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-600">
+                      {venue.type}
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Duplicate Set for Infinite Scroll Effect */}
+              {[
+                {
+                  id: 9,
+                  name: "Hotel Galaxy Dhanbad",
+                  location: "Bank More, Dhanbad",
+                  rating: 4.5,
+                  type: "5-Star Hotel",
+                  color: "from-pink-500 to-rose-500"
+                },
+                {
+                  id: 10,
+                  name: "Greenland Resorts",
+                  location: "Katras Road, Dhanbad",
+                  rating: 4.4,
+                  type: "Luxury Resort",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  id: 11,
+                  name: "Apsara Wedding Palace",
+                  location: "Koyla Nagar, Dhanbad",
+                  rating: 4.6,
+                  type: "Wedding Palace",
+                  color: "from-blue-500 to-purple-500"
+                },
+                {
+                  id: 12,
+                  name: "Shree Krishna Marriage Hall",
+                  location: "Katras, Dhanbad",
+                  rating: 4.3,
+                  type: "Marriage Hall",
+                  color: "from-green-500 to-blue-500"
+                },
+                {
+                  id: 13,
+                  name: "Hotel Samrat International",
+                  location: "Bank More, Dhanbad",
+                  rating: 4.4,
+                  type: "Banquet Hall",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  id: 14,
+                  name: "Mohan Garden Restaurant",
+                  location: "Saraidhela, Dhanbad",
+                  rating: 4.2,
+                  type: "Garden Restaurant",
+                  color: "from-red-500 to-pink-500"
+                },
+                {
+                  id: 15,
+                  name: "Raj Mahal Wedding Hall",
+                  location: "Katras, Dhanbad",
+                  rating: 4.5,
+                  type: "Wedding Hall",
+                  color: "from-indigo-500 to-purple-500"
+                },
+                {
+                  id: 16,
+                  name: "The Grand Dhanbad",
+                  location: "Hirapur, Dhanbad",
+                  rating: 4.6,
+                  type: "Premium Venue",
+                  color: "from-teal-500 to-green-500"
+                }
+              ].map((venue) => (
+                <div
+                  key={`duplicate-${venue.id}`}
+                  className="flex-shrink-0 w-64 md:w-72 bg-white rounded-2xl shadow-lg border border-pink-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className={`h-3 bg-gradient-to-r ${venue.color}`}></div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2 line-clamp-1">
+                      {venue.name}
+                    </h3>
+                    <div className="flex items-center gap-2 mb-3">
+                      <FaMapMarkerAlt className="text-pink-400 text-sm" />
+                      <span className="text-gray-600 text-sm">{venue.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar key={i} className={`text-sm ${i < Math.floor(venue.rating) ? 'text-yellow-400' : 'text-gray-300'}`} />
+                        ))}
+                      </div>
+                      <span className="text-gray-700 font-semibold">{venue.rating}</span>
+                    </div>
+                    <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-600">
+                      {venue.type}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Touch Scroll Hint */}
+          <div className="md:hidden text-center mt-6">
+            <p className="text-sm text-gray-500">← Touch and drag to see more venues →</p>
+          </div>
+
+        </div>
+
+        {/* Add Animation to CSS */}
+        <style jsx>{`
+          @keyframes scroll-venues {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-50% - 1.5rem));
+            }
+          }
+          
+          .animate-scroll-venues {
+            animation: scroll-venues 30s linear infinite;
+            display: flex;
+            width: max-content;
+          }
+          
+          .animate-scroll-venues:hover {
+            animation-play-state: paused;
+          }
+          
+          @media (max-width: 768px) {
+            @keyframes scroll-venues {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(calc(-50% - 1.5rem));
+              }
+            }
+          }
+        `}</style>
+      </section>
 
     </div>
   );
