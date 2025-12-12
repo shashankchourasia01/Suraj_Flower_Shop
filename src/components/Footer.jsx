@@ -40,13 +40,13 @@ const Footer = () => {
     { icon: <FaFacebookF />, link: 'https://facebook.com/surajflowershop', label: 'Facebook' },
     { icon: <FaInstagram />, link: 'https://instagram.com/surajflowershop', label: 'Instagram' },
     { icon: <FaYoutube />, link: 'https://youtube.com/surajflowershop', label: 'YouTube' },
-    { icon: <FaWhatsapp />, link: 'https://wa.me/919876543210', label: 'WhatsApp' }
+    { icon: <FaWhatsapp />, link: 'https://wa.me/916201718933', label: 'WhatsApp' }
   ];
 
   const contactInfo = [
-    { icon: <FaPhoneAlt />, text: '+91 98765 43210', link: 'tel:+919876543210' },
+    { icon: <FaPhoneAlt />, text: '+91 62017 18933', link: 'tel:+919876543210' },
     { icon: <FaEnvelope />, text: 'info@surajflowershop.com', link: 'mailto:info@surajflowershop.com' },
-    { icon: <FaMapMarkerAlt />, text: 'Shop No. 123, Flower Market, Katras, Dhanbad - 828113', link: 'https://maps.google.com/?q=Katras+Dhanbad' }
+    { icon: <FaMapMarkerAlt />, text: 'Katras Bazar Near Bajrang Bali Mandir, Dhanbad - 828114', link: 'https://maps.google.com/?q=Katras+Dhanbad' }
   ];
 
   return (
@@ -206,7 +206,7 @@ const Footer = () => {
         {/* Floating WhatsApp Button */}
         <div className="fixed bottom-6 right-6 z-50">
           <a
-            href="https://wa.me/919876543210?text=Hello%20Suraj%20Flower%20House"
+            href="https://wa.me/916201718933?text=Hello%20Suraj%20Flower%20House"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative"

@@ -29,7 +29,7 @@ export default function Navbar() {
 
   const topBarInfo = [
     { icon: <FaEnvelope className="text-pink-400" />, text: 'info@surajflowershop.com' },
-    { icon: <FaPhoneAlt className="text-pink-400" />, text: '+91 98765 43210' }
+    { icon: <FaPhoneAlt className="text-pink-400" />, text: '+91 6201718933' }
   ];
 
   const socialIcons = [

@@ -101,9 +101,9 @@ const ContactUs = () => {
                 <div>
                   <h3 className="font-bold text-gray-800 text-lg mb-1">Our Location</h3>
                   <p className="text-gray-600">
-                    Shop No. 123, Flower Market<br />
-                    Katras, Dhanbad<br />
-                    Jharkhand - 828113
+                    
+                    Katras Bazar, Dhanbad<br />
+                    Jharkhand - 828114
                   </p>
                 </div>
               </div>
@@ -120,13 +120,13 @@ const ContactUs = () => {
                       href="tel:+919876543210" 
                       className="text-gray-700 hover:text-pink-600 transition-colors block"
                     >
-                      +91 98765 43210 (Suraj)
+                      +91 6201718933 (Chandan)
                     </a>
                     <a 
                       href="tel:+919876543211" 
                       className="text-gray-700 hover:text-pink-600 transition-colors block"
                     >
-                      +91 98765 43211 (Support)
+                      +91 6201718933 (Support)
                     </a>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ const ContactUs = () => {
                 <div>
                   <h3 className="font-bold text-gray-800 text-lg mb-1">Business Hours</h3>
                   <p className="text-gray-600">
-                    Monday - Sunday: 9:00 AM - 9:00 PM<br />
+                    Monday - Sunday: 6:00 AM - 9:00 PM<br />
                     Open 7 days a week
                   </p>
                 </div>
@@ -233,7 +233,7 @@ const ContactUs = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-pink-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 outline-none transition-all"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 6201718933"
                     />
                   </div>
                   
@@ -369,7 +369,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-2">From Bus Stand</h4>
-                  <p className="text-gray-600 text-sm">10 minutes drive from Katras Bus Stand</p>
+                  <p className="text-gray-600 text-sm">5 minutes drive from Katras Bus Stand</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-2">Parking Available</h4>
@@ -383,7 +383,7 @@ const ContactUs = () => {
         {/* Nearby Locations */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-xl shadow-md border border-pink-100">
-            <h4 className="font-bold text-gray-800 mb-2">Near Katras Market</h4>
+            <h4 className="font-bold text-gray-800 mb-2">Katras Bazar Dhanbad</h4>
             <p className="text-gray-600 text-sm">Conveniently located in the main flower market area</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md border border-pink-100">

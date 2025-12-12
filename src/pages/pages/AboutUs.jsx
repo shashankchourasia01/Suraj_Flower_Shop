@@ -265,7 +265,7 @@ const AboutUs = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-800">Our Location</h3>
-                <p className="text-gray-600 text-sm">123 Flower Street, Jaipur, Rajasthan 302001</p>
+                <p className="text-gray-600 text-sm">Katras Bazar, Near Bajrang Bali Mandir, Dhanbad-828114</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -274,7 +274,7 @@ const AboutUs = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-800">Call Us</h3>
-                <p className="text-gray-600 text-sm">+91 98765 43210</p>
+                <p className="text-gray-600 text-sm">+91 62017 18933</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -283,7 +283,7 @@ const AboutUs = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-800">Opening Hours</h3>
-                <p className="text-gray-600 text-sm">Mon-Sun: 9 AM - 9 PM</p>
+                <p className="text-gray-600 text-sm">Mon-Sun: 6 AM - 9 PM</p>
               </div>
             </div>
           </div>
