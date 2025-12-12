@@ -179,7 +179,7 @@ const Footer = () => {
             <div className="text-white/70 text-sm text-center md:text-left">
               © {currentYear} Suraj Flower House. All rights reserved.
               <div className="mt-1">
-                Crafted with <FaHeart className="inline text-pink-400 mx-1" /> in Dhanbad, Jharkhand
+                Designed By <FaHeart className="inline text-pink-400 mx-1" /> Shashank Chourasia - 9304637399
               </div>
             </div>
 
