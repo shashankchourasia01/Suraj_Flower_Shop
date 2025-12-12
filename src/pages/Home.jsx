@@ -399,7 +399,7 @@ const Home = () => {
             title: "Royal Wedding Decoration",
             type: "Wedding",
             couple: "Rahul & Priya",
-            location: "Jaipur Palace",
+            location: "Dhanbad",
             price: "₹1,50,000",
             rating: 4.9,
             videoSrc: "/videos/onev.mp4",
