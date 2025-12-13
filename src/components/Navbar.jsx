@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom'; // Added useLocation
 import { 
   FaPhoneAlt, 
   FaEnvelope, 
@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa';
 
 export default function Navbar() {
+  const location = useLocation(); // Added this line
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [topBarTextIndex, setTopBarTextIndex] = useState(0);
@@ -38,14 +39,12 @@ export default function Navbar() {
     { icon: <FaYoutube />, link: 'https://youtube.com/surajflowershop' }
   ];
 
-
   const pagesMenu = [
-  { name: 'About Us', path: '/pages/about-us' },
-  { name: 'Our Team', path: '/pages/our-team' },
-  { name: 'Pricing Plans', path: '/pages/pricing-plan' },
-  { name: 'Contact Us', path: '/pages/contact-us' }
-];
-
+    { name: 'About Us', path: '/pages/about-us' },
+    { name: 'Our Team', path: '/pages/our-team' },
+    { name: 'Pricing Plans', path: '/pages/pricing-plan' },
+    { name: 'Contact Us', path: '/pages/contact-us' }
+  ];
 
   const navLinks = [
     { name: 'HOME', path: '/' },
@@ -76,6 +75,16 @@ export default function Navbar() {
     return () => clearInterval(interval);
   }, []);
 
+  // Scroll to top on every route change - ADDED THIS NEW useEffect
+  useEffect(() => {
+    // Scroll to top when route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [location.pathname]); // This will run every time path changes
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -87,6 +96,13 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMenuOpen]);
+
+  // Handle navigation click for mobile
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+    // Ensure scroll to top on mobile navigation
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -239,12 +255,6 @@ export default function Navbar() {
           <div className={`md:hidden fixed inset-0 z-50 transition-transform duration-300 ease-in-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}>
-            {/* Overlay */}
-            {/* <div 
-              className="absolute inset-0 bg-black bg-opacity-30"
-              onClick={() => setIsMenuOpen(false)}
-            ></div> */}
-            
             {/* Menu Panel */}
             <div className="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl overflow-y-auto mobile-menu">
               {/* Menu Header */}
@@ -258,12 +268,6 @@ export default function Navbar() {
                     <p className="text-xs text-gray-600">Menu</p>
                   </div>
                 </div>
-                {/* <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-600 hover:text-pink-600"
-                >
-                  <FaTimes size={20} />
-                </button> */}
               </div>
 
               {/* Menu Content */}
@@ -287,10 +291,7 @@ export default function Navbar() {
                                 <NavLink
                                   key={item.name}
                                   to={item.path}
-                                  onClick={() => {
-                                    setIsMenuOpen(false);
-                                    setIsPagesOpen(false);
-                                  }}
+                                  onClick={handleNavClick} // Added this
                                   className={({ isActive }) =>
                                     `block py-2 px-4 text-gray-600 hover:text-pink-600 rounded ${isActive ? 'text-pink-600 bg-pink-50' : ''}`
                                   }
@@ -304,7 +305,7 @@ export default function Navbar() {
                       ) : (
                         <NavLink
                           to={link.path}
-                          onClick={() => setIsMenuOpen(false)}
+                          onClick={handleNavClick} // Added this
                           className={({ isActive }) =>
                             `block px-4 py-3 rounded-lg font-medium ${isActive ? activeClass + ' bg-pink-50' : 'text-gray-700 hover:text-pink-600 hover:bg-pink-50'} transition-colors`
                           }
@@ -352,7 +353,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 shadow-lg"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleNavClick} // Added this
                   >
                     <FaWhatsapp className="text-lg" />
                     Chat on WhatsApp
