@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const Shop = () => {
   // Product categories with multiple images
-  const productCategories = [
+  const productCategories = useMemo(()=>[
     {
       id: 1,
       title: "Wedding Varmala",
@@ -183,7 +183,7 @@ const Shop = () => {
       features: ["Ceremony Specific", "Traditional", "Fragrant", "Complete Set"],
       popular: false
     }
-  ];
+  ], []);
 
   // State for filter
   const [filter, setFilter] = useState('all');
