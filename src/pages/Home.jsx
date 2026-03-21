@@ -873,9 +873,9 @@ const Home = () => {
       </section>
 
       {/* Why Choose Suraj Flower Shop Section */}
-      <section className="py-4 md:py-20 bg-white">
+      {/* <section className="py-4 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          {/* Section Header */}
+          
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
               Why Choose <span className="text-pink-600">Suraj Flower Shop</span>?
@@ -885,9 +885,9 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Features Grid - Vertical on Mobile, Horizontal on Desktop */}
+          
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-            {/* Feature 1 */}
+            
             <div className="flex-1">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 mb-6">
@@ -903,7 +903,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Feature 2 */}
+            
             <div className="flex-1">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-rose-100 to-pink-100 mb-6">
@@ -919,7 +919,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Feature 3 */}
+            
             <div className="flex-1">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 mb-6">
@@ -936,7 +936,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Decorative Divider */}
+         
           <div className="mt-6 md:mt-10 pt-4 border-t border-pink-100">
             <div className="flex flex-col md:flex-row items-center justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -955,7 +955,106 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+      <section className="py-6 md:py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+    {/* Section Header */}
+    <div className="text-center mb-6 md:mb-20">
+      <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-6">
+        Why Choose <span className="text-pink-600">Suraj Flower Shop</span>?
+      </h2>
+      <p className="text-gray-600 text-sm md:text-xl max-w-3xl mx-auto leading-relaxed">
+        Experience the difference of dedicated artistry, unparalleled quality, and a truly personal touch.
+      </p>
+    </div>
+
+    {/* Features - Mobile: Compact horizontal card, Desktop: Vertical full */}
+    <div className="flex flex-col md:flex-row gap-4 md:gap-12">
+
+      {/* Feature 1 */}
+      <div className="flex-1">
+        {/* Mobile: Horizontal layout (number + text side by side) */}
+        <div className="flex md:block items-start gap-4">
+          <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 md:mb-6">
+            <span className="text-base md:text-2xl font-bold text-pink-600">1</span>
+          </div>
+          <div className="flex-1 text-left md:text-left">
+            <h3 className="text-base md:text-3xl font-bold text-gray-800 mb-1 md:mb-4">
+              Unrivaled Creativity
+            </h3>
+            <div className="h-0.5 md:h-1 w-10 md:w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-2 md:mb-6"></div>
+            <p className="text-gray-600 leading-relaxed text-xs md:text-lg">
+              Our team brings fresh, innovative ideas to every project, ensuring your floral arrangements are unique and breathtaking.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile divider */}
+      <div className="md:hidden border-t border-pink-100"></div>
+
+      {/* Feature 2 */}
+      <div className="flex-1">
+        <div className="flex md:block items-start gap-4">
+          <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-rose-100 to-pink-100 md:mb-6">
+            <span className="text-base md:text-2xl font-bold text-pink-600">2</span>
+          </div>
+          <div className="flex-1 text-left md:text-left">
+            <h3 className="text-base md:text-3xl font-bold text-gray-800 mb-1 md:mb-4">
+              Personalized Service
+            </h3>
+            <div className="h-0.5 md:h-1 w-10 md:w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-2 md:mb-6"></div>
+            <p className="text-gray-600 leading-relaxed text-xs md:text-lg">
+              We listen intently to your vision, collaborating closely to craft designs that perfectly reflect your style and personality.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile divider */}
+      <div className="md:hidden border-t border-pink-100"></div>
+
+      {/* Feature 3 */}
+      <div className="flex-1">
+        <div className="flex md:block items-start gap-4">
+          <div className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 md:mb-6">
+            <span className="text-base md:text-2xl font-bold text-pink-600">3</span>
+          </div>
+          <div className="flex-1 text-left md:text-left">
+            <h3 className="text-base md:text-3xl font-bold text-gray-800 mb-1 md:mb-4">
+              Sustainable Practices
+            </h3>
+            <div className="h-0.5 md:h-1 w-10 md:w-16 bg-gradient-to-r from-pink-400 to-rose-400 mb-2 md:mb-6"></div>
+            <p className="text-gray-600 leading-relaxed text-xs md:text-lg">
+              Committed to the environment, we prioritize locally sourced flowers and eco-friendly practices in all our designs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Decorative Divider */}
+    <div className="mt-5 md:mt-10 pt-3 md:pt-4 border-t border-pink-100">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-3">
+        <div className="hidden md:flex items-center gap-3">
+          <div className="w-1 h-1 rounded-full bg-pink-400"></div>
+          <div className="w-1 h-1 rounded-full bg-rose-400"></div>
+          <div className="w-1 h-1 rounded-full bg-pink-300"></div>
+        </div>
+        <p className="text-gray-500 text-center text-xs md:text-base italic">
+          Trusted by thousands of satisfied customers across India
+        </p>
+        <div className="hidden md:flex items-center gap-3">
+          <div className="w-1 h-1 rounded-full bg-rose-300"></div>
+          <div className="w-1 h-1 rounded-full bg-pink-400"></div>
+          <div className="w-1 h-1 rounded-full bg-rose-400"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       {/* What Our Clients Say Section */}
