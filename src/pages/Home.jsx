@@ -218,7 +218,89 @@ const Home = () => {
 
           {/* Vendors Scroll Container */}
           <div className="relative">
-            {/* Left Scroll Button */}
+            {/* Left Scroll Button - Desktop only */}
+            <button
+              onClick={() => scrollVendors('left')}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:flex items-center justify-center"
+            >
+              <FaArrowRight className="rotate-180 text-pink-500" />
+            </button>
+
+            {/* ── MOBILE: Grid layout - 4 columns, icon + name ── */}
+            <div className="md:hidden grid grid-cols-4 gap-3 px-1 py-2">
+              {vendors.map((vendor) => (
+                <Link
+                  key={vendor.id}
+                  to={vendor.path}
+                  className="flex flex-col items-center text-center gap-1.5 group"
+                >
+                  {/* Icon Circle */}
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center shadow-md group-hover:from-pink-200 group-hover:to-rose-200 transition-all border border-pink-200">
+                    <div className="text-pink-600 text-xl">
+                      {vendor.icon}
+                    </div>
+                  </div>
+                  {/* Name */}
+                  <span className="text-xs font-medium text-gray-700 group-hover:text-pink-600 leading-tight line-clamp-2 w-full">
+                    {vendor.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* ── DESKTOP: Horizontal scroll ── */}
+            <div
+              ref={vendorsScrollRef}
+              className="hidden md:flex overflow-x-auto scrollbar-hide space-x-6 px-8 py-4"
+              style={{ scrollBehavior: 'smooth' }}
+            >
+              {vendors.map((vendor) => (
+                <Link
+                  key={vendor.id}
+                  to={vendor.path}
+                  className="flex-shrink-0 w-36 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl border border-pink-100 hover:border-pink-300 transition-all duration-300 group"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center mb-3 group-hover:from-pink-200 group-hover:to-rose-200 transition-all">
+                      <div className="text-pink-600 text-xl">
+                        {vendor.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-base font-semibold text-gray-800 group-hover:text-pink-600 line-clamp-2">
+                      {vendor.name}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Right Scroll Button - Desktop only */}
+            <button
+              onClick={() => scrollVendors('right')}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:flex items-center justify-center"
+            >
+              <FaArrowRight className="text-pink-500" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+{/* // pele wala  */}
+{/* <section className="py-6 md:py-10 bg-gradient-to-b from-white to-pink-50">
+        <div className="max-w-7xl mx-auto px-4">
+          
+          <div className="text-center mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Explore Our <span className="text-pink-600">Services</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore a wide range of elegant decoration services for your special moments.
+            </p>
+          </div>
+
+          <div className="relative">
+            
             <button
               onClick={() => scrollVendors('left')}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:block"
@@ -226,7 +308,7 @@ const Home = () => {
               <FaArrowRight className="rotate-180 text-pink-500" />
             </button>
 
-            {/* Vendors Horizontal Scroll */}
+            
             <div
               ref={vendorsScrollRef}
               className="flex overflow-x-auto scrollbar-hide space-x-4 md:space-x-6 px-2 py-4 md:px-8"
@@ -252,7 +334,7 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Right Scroll Button */}
+            
             <button
               onClick={() => scrollVendors('right')}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 border border-pink-200 hover:bg-pink-50 transition-all hidden md:block"
@@ -260,13 +342,13 @@ const Home = () => {
               <FaArrowRight className="text-pink-500" />
             </button>
 
-            {/* Mobile Scroll Indicator */}
+            
             <div className="md:hidden text-center mt-4">
               <p className="text-sm text-gray-500">← Scroll horizontally →</p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       {/* Features Section with Flower Background */}
