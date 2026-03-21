@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom'; // Added useLocation
+import { NavLink, useLocation } from 'react-router-dom';
 import { 
   FaPhoneAlt, 
   FaEnvelope, 
@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa';
 
 export default function Navbar() {
-  const location = useLocation(); // Added this line
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [topBarTextIndex, setTopBarTextIndex] = useState(0);
@@ -75,15 +75,14 @@ export default function Navbar() {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll to top on every route change - ADDED THIS NEW useEffect
+  // Scroll to top on every route change
   useEffect(() => {
-    // Scroll to top when route changes
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'instant'
     });
-  }, [location.pathname]); // This will run every time path changes
+  }, [location.pathname]);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -100,7 +99,6 @@ export default function Navbar() {
   // Handle navigation click for mobile
   const handleNavClick = () => {
     setIsMenuOpen(false);
-    // Ensure scroll to top on mobile navigation
     window.scrollTo(0, 0);
   };
 
@@ -110,9 +108,9 @@ export default function Navbar() {
       <div className="bg-gradient-to-r from-pink-50 to-rose-50 shadow-sm border-b border-pink-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile View - Animated Text Only */}
-          <div className="md:hidden py-3">
-            <div className="flex justify-center items-center h-6">
-              <div className={`text-sm text-pink-800 font-medium tracking-wide text-center whitespace-nowrap overflow-hidden ${
+          <div className="md:hidden py-2">
+            <div className="flex justify-center items-center h-5">
+              <div className={`text-xs text-pink-800 font-medium tracking-wide text-center whitespace-nowrap overflow-hidden ${
                 topBarAnimation === 'enter' 
                   ? 'animate-slideInFromRight' 
                   : 'animate-slideOutToLeft'
@@ -168,17 +166,19 @@ export default function Navbar() {
       {/* Main Navigation Bar */}
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          {/* FIX 1: Mobile h-14 (56px), Desktop h-20 (80px) */}
+          <div className="flex justify-between items-center h-14 md:h-20">
             {/* Logo & Shop Name */}
             <div className="flex items-center">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-200 to-rose-300 shadow-md flex items-center justify-center mr-3">
-                <span className="text-xl font-bold text-pink-700">SF</span>
+              {/* FIX 2: Mobile logo thoda chota */}
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-pink-200 to-rose-300 shadow-md flex items-center justify-center mr-2 md:mr-3">
+                <span className="text-base md:text-xl font-bold text-pink-700">SF</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+                <h1 className="text-lg md:text-2xl font-bold bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
                   Suraj Flower Shop
                 </h1>
-                <p className="text-xs text-gray-500">Floral Decorations & Events</p>
+                <p className="text-xs text-gray-500 hidden sm:block">Floral Decorations & Events</p>
               </div>
             </div>
 
@@ -232,7 +232,7 @@ export default function Navbar() {
             {/* Desktop Contact Button */}
             <div className="hidden md:block">
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/916201718933"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl hover:from-pink-600 hover:to-rose-600 transition-all duration-300 transform hover:-translate-y-0.5"
@@ -242,36 +242,58 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Mobile Menu Button - Always Visible on Mobile */}
+            {/* Mobile Menu Button - sirf FaBars, FaTimes slide panel mein hai */}
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="menu-button md:hidden text-gray-700 hover:text-pink-600 p-2 z-60"
+              onClick={() => setIsMenuOpen(true)}
+              className="menu-button md:hidden text-gray-700 hover:text-pink-600 p-2"
+              style={{ zIndex: 60 }}
             >
-              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              <FaBars size={22} />
             </button>
           </div>
+        </div>
 
-          {/* Mobile Menu - Slides from right */}
-          <div className={`md:hidden fixed inset-0 z-50 transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}>
-            {/* Menu Panel */}
-            <div className="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl overflow-y-auto mobile-menu">
-              {/* Menu Header */}
-              <div className="sticky top-0 bg-gradient-to-r from-pink-50 to-rose-50 p-6 border-b border-pink-100 flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-200 to-rose-300 shadow-md flex items-center justify-center mr-3">
-                    <span className="text-lg font-bold text-pink-700">SF</span>
+        {/* FIX 3: Slide menu - nav ke andar nahi, alag portal jaisa
+            - inset-0 hataya, sirf right side se slide hoga
+            - top-0 rakha taaki nav ke neeche se start ho
+            - Overlay background bhi add kiya */}
+        {isMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 z-40"
+            style={{ top: 0 }}
+            onClick={(e) => {
+              if (!e.target.closest('.mobile-menu')) {
+                setIsMenuOpen(false);
+              }
+            }}
+          >
+            {/* White blur overlay */}
+            <div className="absolute inset-0" style={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(255, 255, 255, 0.55)' }} />
+
+            {/* Menu Panel - sirf right side */}
+            <div className="mobile-menu absolute right-0 top-0 h-full w-72 bg-white shadow-2xl overflow-y-auto flex flex-col">
+              
+              {/* FIX 4: Menu header mein sirf title, alag logo nahi - clean look */}
+              <div className="bg-gradient-to-r from-pink-500 to-rose-500 px-5 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-white bg-opacity-30 flex items-center justify-center">
+                    <span className="text-base font-bold text-white">SF</span>
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-pink-700">Suraj Flower</h2>
-                    <p className="text-xs text-gray-600">Menu</p>
+                    <h2 className="text-base font-bold text-white">Suraj Flower Shop</h2>
+                    <p className="text-xs text-pink-100">Floral Decorations & Events</p>
                   </div>
                 </div>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-white hover:text-pink-200 transition-colors p-1"
+                >
+                  <FaTimes size={20} />
+                </button>
               </div>
 
-              {/* Menu Content */}
-              <div className="p-6">
+              {/* Menu Links */}
+              <div className="p-5 flex-1">
                 <div className="flex flex-col space-y-1">
                   {navLinks.map((link) => (
                     <div key={link.name} className="mb-1">
@@ -282,7 +304,7 @@ export default function Navbar() {
                             className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded-lg transition-colors"
                           >
                             <span className="font-medium">{link.name}</span>
-                            <FaChevronDown className={`transition-transform ${isPagesOpen ? 'rotate-180' : ''}`} />
+                            <FaChevronDown className={`transition-transform text-sm ${isPagesOpen ? 'rotate-180' : ''}`} />
                           </button>
                           
                           {isPagesOpen && (
@@ -291,7 +313,7 @@ export default function Navbar() {
                                 <NavLink
                                   key={item.name}
                                   to={item.path}
-                                  onClick={handleNavClick} // Added this
+                                  onClick={handleNavClick}
                                   className={({ isActive }) =>
                                     `block py-2 px-4 text-gray-600 hover:text-pink-600 rounded ${isActive ? 'text-pink-600 bg-pink-50' : ''}`
                                   }
@@ -305,7 +327,7 @@ export default function Navbar() {
                       ) : (
                         <NavLink
                           to={link.path}
-                          onClick={handleNavClick} // Added this
+                          onClick={handleNavClick}
                           className={({ isActive }) =>
                             `block px-4 py-3 rounded-lg font-medium ${isActive ? activeClass + ' bg-pink-50' : 'text-gray-700 hover:text-pink-600 hover:bg-pink-50'} transition-colors`
                           }
@@ -318,22 +340,20 @@ export default function Navbar() {
                 </div>
 
                 {/* Contact Info in Mobile Menu */}
-                <div className="mt-8 pt-6 border-t border-pink-100">
-                  <div className="space-y-4 mb-6">
+                <div className="mt-6 pt-5 border-t border-pink-100">
+                  <div className="space-y-3 mb-5">
                     {topBarInfo.map((item, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
+                        <div className="w-9 h-9 rounded-full bg-pink-100 flex items-center justify-center">
                           {item.icon}
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-600">{item.text}</p>
-                        </div>
+                        <p className="text-sm text-gray-600">{item.text}</p>
                       </div>
                     ))}
                   </div>
 
-                  {/* Social Icons in Mobile Menu */}
-                  <div className="flex items-center justify-center gap-4 mb-6">
+                  {/* Social Icons */}
+                  <div className="flex items-center justify-center gap-4 mb-5">
                     {socialIcons.map((social, index) => (
                       <a
                         key={index}
@@ -347,13 +367,13 @@ export default function Navbar() {
                     ))}
                   </div>
 
-                  {/* WhatsApp Button in Mobile Menu */}
+                  {/* WhatsApp Button */}
                   <a
-                    href="https://wa.me/919876543210"
+                    href="https://wa.me/916201718933"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 shadow-lg"
-                    onClick={handleNavClick} // Added this
+                    onClick={handleNavClick}
                   >
                     <FaWhatsapp className="text-lg" />
                     Chat on WhatsApp
@@ -362,63 +382,35 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-        </div>
+        )}
       </nav>
 
-      {/* Add custom animations to Tailwind */}
       <style jsx>{`
         @keyframes slideInFromRight {
-          from {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
         }
-        
         @keyframes slideOutToLeft {
-          from {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          to {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
+          from { transform: translateX(0); opacity: 1; }
+          to { transform: translateX(-100%); opacity: 0; }
         }
-        
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
-        
         @keyframes fadeOut {
-          from {
-            opacity: 1;
-          }
-          to {
-            opacity: 0;
-          }
+          from { opacity: 1; }
+          to { opacity: 0; }
         }
-        
         .animate-slideInFromRight {
           animation: slideInFromRight 0.3s ease-out;
         }
-        
         .animate-slideOutToLeft {
           animation: slideOutToLeft 0.3s ease-in;
         }
-        
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
-        
         .animate-fadeOut {
           animation: fadeOut 0.3s ease-in;
         }
