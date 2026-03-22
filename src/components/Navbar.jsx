@@ -168,8 +168,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* FIX 1: Mobile h-14 (56px), Desktop h-20 (80px) */}
           <div className="flex justify-between items-center h-14 md:h-20">
-            {/* Logo & Shop Name */}
-            <div className="flex items-center">
+            {/* Logo & Shop Name - click karo to home jao */}
+            <NavLink to="/" className="flex items-center">
               {/* FIX 2: Mobile logo thoda chota */}
               <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-pink-200 to-rose-300 shadow-md flex items-center justify-center mr-2 md:mr-3">
                 <span className="text-base md:text-xl font-bold text-pink-700">SF</span>
@@ -180,7 +180,7 @@ export default function Navbar() {
                 </h1>
                 <p className="text-xs text-gray-500 hidden sm:block">Floral Decorations & Events</p>
               </div>
-            </div>
+            </NavLink>
 
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-1">
@@ -242,14 +242,16 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Mobile Menu Button - sirf FaBars, FaTimes slide panel mein hai */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="menu-button md:hidden text-gray-700 hover:text-pink-600 p-2"
-              style={{ zIndex: 60 }}
-            >
-              <FaBars size={22} />
-            </button>
+            {/* Mobile Menu Button - menu open hone pe hide ho jata hai */}
+            {!isMenuOpen && (
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="menu-button md:hidden text-gray-700 hover:text-pink-600 p-2"
+                style={{ zIndex: 60 }}
+              >
+                <FaBars size={22} />
+              </button>
+            )}
           </div>
         </div>
 
